@@ -1,0 +1,4 @@
+Projet PFE : Data quality and IA
+
+l'application Android permet l'utilisateur de prendre en photo les grain de beauté et l'envoie au serverveur ( 198.0.1.15 )
+l'application Web fait des traitement d'image avec Opencv pour determiner la qualité de photo prise
