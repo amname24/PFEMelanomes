@@ -1,4 +1,4 @@
-Projet PFE : Data quality and IA
+Projet PFE : Data Quality and Machine Learning : A Medical Case Study
 
 l'application Android permet l'utilisateur de prendre en photo les grain de beauté et l'envoie au serveur (http://192.168.0.15:8080/PFEjee/Upload)
 l'application Web fait des traitement d'image avec Opencv pour determiner la qualité de photo prise
