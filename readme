@@ -6,23 +6,23 @@ On utilise Android Studio pour partie android et Eclipse pour partie web
 
 Pour l'application web : 
 On utilise JavaJEE 
-Une fois la photo est envoyé sur notre serveur notre progrmme fait les etapes suivante :
+Une fois la photo est envoyée sur notre serveur notre progrmme fait les etapes suivantes :
 - créer un dossier WebApp\PFEjee\WebContent\IMG\<nom_de_photo>
-- Recevoir la photo de l'applicationn android et l'enregister dans le serveur avec le path : WebApp\PFEjee\WebContent\IMG\<nom_de_photo>\<nom_de_photo>.jpg
-- enregister cette image dans la base de données Mongodb dans la collection photos 
-- Preparer les données trainning pour le classification : 
+- Recevoir la photo de l'application Android et enregister cette photo dans le serveur avec le path : WebApp\PFEjee\WebContent\IMG\<nom_de_photo>\<nom_de_photo>.jpg
+- enregister cette image dans la base de données Mongodb dans la collection "photos" 
+- Preparer les données d'entainement pour le classification : 
 	- les images d'entrainement se trouvent dans le dossier WebApp\PFEjee\WebContent\IMGTRAIN
-	- les images sont traités et enregistés dans une base des données Mongodb dans la collection photos et les données de chaque image d'entrainement
-		sont enregistés dans une collection de données : PhotoDataTrain
+	- les images sont traitées et enregistées dans une base de données Mongodb dans la collection "photos" et les données de 
+	chaque image d'entrainement sont enregistées dans une collection de données "PhotoDataTrain"
 	- les images segmentées sont enregistées dans WebApp\PFEjee\WebContent\IMGTRAIN\nom_de_image\seg
-	- les données des images sont exportés vers un fichier dataTrain.csv et enregistés dans WebApp\PFEjee\WebContent\DOCS
+	- les données des images sont exportées vers un fichier dataTrain.csv et enregistées dans WebApp\PFEjee\WebContent\DOCS
 Il faut noter que cette etape ne se fait que si on a moins que 2 fichiers .csv dans WebApp\PFEjee\WebContent\DOCS 
-- segmenter l'image qu'on a recu de l'application android et enregister les images segmentées dans le dossier WebApp\PFEjee\WebContent\IMG\<nom_de_photo>\seg
-- enregister les données de la photo recu dans Mongodb dans la collection de données : PhotoDataTest
-- les données de l'image sont exportés vers un fichier dataTest.csv et enregistés dans WebApp\PFEjee\WebContent\DOCS
+- segmenter l'image qu'on a recu de l'application Android et enregister les images segmentées dans le dossier WebApp\PFEjee\WebContent\IMG\<nom_de_photo>\seg
+- enregister les données de la photo recu dans Mongodb dans la collection de données "PhotoDataTest"
+- les données de l'image sont exportées vers un fichier dataTest.csv et enregistées dans WebApp\PFEjee\WebContent\DOCS
 - Utiliser l'API Weka pour analyser les donner et predir la qualité de la photo recu à l'aide de differentes algorithmes de prediction 
 et les données d'entrainement.
 
-Il faut noter que pour le moment on a fait que des traimtement d'image sur les couleurs : light brown, dark brown, white, black, red, blue gray
+Il faut noter que pour le moment on a fait que des traitement d'image sur les couleurs : light brown, dark brown, white, black, red, blue gray
 
  
