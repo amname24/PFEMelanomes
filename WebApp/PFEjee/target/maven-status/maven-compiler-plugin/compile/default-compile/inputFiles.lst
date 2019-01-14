@@ -1,3 +1,16 @@
-C:\Users\me\eclipse-workspace2\PFEjee\src\uploadImage\Upload.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\mongo\converter\PhotoDataConverter.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\image\upload\Upload.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\image\segmentation\MainTest.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\mongo\dao\PhotoDataDAO.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\mongo\model\Photo.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\mongo\model\PhotoData.java
 C:\Users\me\eclipse-workspace2\PFEjee\src\ImageSegmentation.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\image\classification\baseClassifiers.java
 C:\Users\me\eclipse-workspace2\PFEjee\src\ImageSegmentationDemo.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\mongo\converter\PhotoConverter.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\mongo\export\WriteCSV.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\image\segmentation\ImageSegmentation.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\image\classification\PrepareTrain.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\mongo\dao\PhotoDAO.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\mongo\listener\MongoDBContextListener.java
+C:\Users\me\eclipse-workspace2\PFEjee\src\mongo\export\ExportData.java

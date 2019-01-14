@@ -17,8 +17,12 @@ import mongo.model.PhotoData;
 public class PhotoDataDAO {
 	private DBCollection col;
 
-	public PhotoDataDAO(MongoClient mongo) {
-		this.col = mongo.getDB("PFE").getCollection("PhotosData");
+	public PhotoDataDAO(MongoClient mongo, boolean test) {
+		if(test)
+			this.col = mongo.getDB("PFE").getCollection("PhotosDataTest");
+		else
+			this.col = mongo.getDB("PFE").getCollection("PhotosDataTrain");
+
 	}
 
 	public PhotoData createPhotoData(PhotoData p) {
