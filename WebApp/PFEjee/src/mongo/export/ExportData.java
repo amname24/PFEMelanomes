@@ -28,8 +28,8 @@ public class ExportData {
 				PhotoData p = PhotoDataConverter.toPhotoData(doc);
 				datatrain.add(p);
 			}
-			WriteCSV.run(datatest,"C:\\Users\\me\\eclipse-workspace2\\PFEjee\\WebContent\\DOCS\\dataTest.csv");
-			WriteCSV.run(datatrain,"C:\\Users\\me\\eclipse-workspace2\\PFEjee\\WebContent\\DOCS\\dataTrain.csv");
+			WriteArff.run(datatest,"C:\\Users\\me\\eclipse-workspace2\\PFEjee\\WebContent\\DOCS\\dataTest.arff");
+			WriteArff.run(datatrain,"C:\\Users\\me\\eclipse-workspace2\\PFEjee\\WebContent\\DOCS\\dataTrain.arff");
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

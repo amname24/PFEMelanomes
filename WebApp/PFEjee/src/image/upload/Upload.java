@@ -62,9 +62,9 @@ public class Upload extends HttpServlet {
 //		view.forward(request, response);
 		response.getWriter().append("Hello this is a get service ");
 	}
-	private static FilenameFilter csvFileFilter = new FilenameFilter() {
+	private static FilenameFilter arffFileFilter = new FilenameFilter() {
 		public boolean accept(File dir, String name) {
-			return name.endsWith(".csv");
+			return name.endsWith(".arff");
 		}
 	};
 
@@ -93,7 +93,7 @@ public class Upload extends HttpServlet {
 	    fos.write(res);
 	    fos.close();
 	    File repertoire = new File("C:/Users/me/eclipse-workspace2/PFEjee/WebContent/DOCS");
-		File[] files = repertoire.listFiles(csvFileFilter);
+		File[] files = repertoire.listFiles(arffFileFilter);
 	    List<Photo> photos = new ArrayList<Photo>();
 	    //prepare data train if doen't exist
 	    if(files.length<2)

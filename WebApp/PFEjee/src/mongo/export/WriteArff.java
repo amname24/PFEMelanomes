@@ -6,10 +6,30 @@ import java.util.List;
 
 import mongo.model.PhotoData;
 
-public class WriteCSV {
+public class WriteArff {
 		 
-	private static final String CSV_HEADER_TEST = "id,lightbrown,bluegray,darkbrown,black,red,white,melanome";
-	private static final String CSV_HEADER_TRAIN = "id,lightbrown,bluegray,darkbrown,black,red,white,melanome";
+	private static final String CSV_HEADER_TEST ="@relation melanome\r\n" + 
+			"\r\n" + 
+			"@attribute lightbrown {0,1}\r\n" + 
+			"@attribute bluegray {0,1}\r\n" + 
+			"@attribute darkbrown {0,1}\r\n" + 
+			"@attribute black {0,1}\r\n" + 
+			"@attribute red {0,1}\r\n" + 
+			"@attribute white {0,1}\r\n" + 
+			"@attribute labelClass{false, true}\r\n" + 
+			"\r\n" + 
+			"@data";
+	private static final String CSV_HEADER_TRAIN = "@relation melanome\r\n" + 
+			"\r\n" + 
+			"@attribute lightbrown {0,1}\r\n" + 
+			"@attribute bluegray {0,1}\r\n" + 
+			"@attribute darkbrown {0,1}\r\n" + 
+			"@attribute black {0,1}\r\n" + 
+			"@attribute red {0,1}\r\n" + 
+			"@attribute white {0,1}\r\n" + 
+			"@attribute labelClass{false, true}\r\n" + 
+			"\r\n" + 
+			"@data";
 	public static void run( List<PhotoData> dataPhotos, String path) {
  
 		FileWriter fileWriter = null;
@@ -21,8 +41,6 @@ public class WriteCSV {
 			fileWriter.append('\n');
  
 			for (PhotoData dataPhoto : dataPhotos) {
-				fileWriter.append(dataPhoto.getPhotoid());
-				fileWriter.append(',');
 				fileWriter.append(Integer.toString(dataPhoto.getLightBrown()));
 				fileWriter.append(',');
 				fileWriter.append(Integer.toString(dataPhoto.getBlueGray()));
@@ -38,9 +56,9 @@ public class WriteCSV {
 				fileWriter.append(dataPhoto.getMelanome());
 				fileWriter.append('\n');
 			}
-			System.out.println("Write CSV successfully!");
+			System.out.println("Write Arff successfully!");
 		} catch (Exception e) {
-			System.out.println("Writing CSV error!");
+			System.out.println("Writing Arff error!");
 			e.printStackTrace();
 		} finally {
 			try {
@@ -63,8 +81,6 @@ public class WriteCSV {
 			fileWriter.append('\n');
  
 			
-			fileWriter.append(dataPhoto.getPhotoid());
-			fileWriter.append(',');
 			fileWriter.append(Integer.toString(dataPhoto.getLightBrown()));
 			fileWriter.append(',');
 			fileWriter.append(Integer.toString(dataPhoto.getBlueGray()));
@@ -77,12 +93,12 @@ public class WriteCSV {
 			fileWriter.append(',');
 			fileWriter.append(Integer.toString(dataPhoto.getWhite()));
 			fileWriter.append(',');
-			fileWriter.append("");
+			fileWriter.append("?");
 			fileWriter.append('\n');
 			
-			System.out.println("Write CSV successfully!");
+			System.out.println("Write arff successfully!");
 		} catch (Exception e) {
-			System.out.println("Writing CSV error!");
+			System.out.println("Writing arff error!");
 			e.printStackTrace();
 		} finally {
 			try {
