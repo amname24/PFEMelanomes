@@ -1,0 +1,12 @@
+@relation melanome
+
+@attribute lightbrown {0,1}
+@attribute bluegray {0,1}
+@attribute darkbrown {0,1}
+@attribute black {0,1}
+@attribute red {0,1}
+@attribute white {0,1}
+@attribute labelClass{false, true}
+
+@data
+0,1,0,1,0,1,?
