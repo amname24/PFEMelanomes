@@ -3,9 +3,14 @@ Projet PFE : Data quality and IA
 l'application Android permet l'utilisateur de prendre en photo les grain de beauté et l'envoie au serveur "http://192.168.1.73:8080/PFEjee/Upload"
 Pour changer cette adresse IP il faut changer le fichier MainActivity.java dans l'applicationn Android avant de déploiment.
 
-l'application Web fait des traitement d'image avec Opencv pour determiner la qualité de photo prise et prédir si l'image est un mélanome.
+Pour faire fonctionner l'application il faut télécharger l'aplication "AndroidApp" et l'executer à l'aide d'Android Studio sur un Android 
+et télecharger l'application "WebApp" et l'éxecuter sur un Eclipse ( ou une autre IDE). 
+Il faut noter que pour executer l'application Android il faut avoir un portable Android parce que les portables virtuels proposés 
+par Android Studio ne permettent pas d'utiliser la fonction de Camera.
+Il faut que le serveur web a l'adresse  IP "192.168.1.73" ou bien il faut changer cette adresse sur l'appication Android avant 
+son execution sur le mobile.
 
-On utilise Android Studio pour partie android et Eclipse pour partie web 
+l'application Web fait des traitement d'image avec Opencv pour determiner la qualité de photo prise et prédir si l'image est un mélanome.
 
 Pour l'application web : 
 On utilise JavaJEE 
