@@ -1,7 +1,10 @@
 Projet PFE : Data quality and IA
 
-l'application Android permet l'utilisateur de prendre en photo les grain de beauté et l'envoie au serveur (http://192.168.0.15:8080/PFEjee/Upload)
-l'application Web fait des traitement d'image avec Opencv pour determiner la qualité de photo prise
+l'application Android permet l'utilisateur de prendre en photo les grain de beauté et l'envoie au serveur "http://192.168.1.73:8080/PFEjee/Upload"
+Pour changer cette adresse IP il faut changer le fichier MainActivity.java dans l'applicationn Android avant de déploiment.
+
+l'application Web fait des traitement d'image avec Opencv pour determiner la qualité de photo prise et prédir si l'image est un mélanome.
+
 On utilise Android Studio pour partie android et Eclipse pour partie web 
 
 Pour l'application web : 
@@ -14,15 +17,17 @@ Une fois la photo est envoyé sur notre serveur notre progrmme fait les etapes s
 	- les images d'entrainement se trouvent dans le dossier WebApp\PFEjee\WebContent\IMGTRAIN
 	- les images sont traités et enregistés dans une base des données Mongodb dans la collection photos et les données de chaque image d'entrainement
 		sont enregistés dans une collection de données : PhotoDataTrain
-	- les images segmentées sont enregistées dans WebApp\PFEjee\WebContent\IMGTRAIN\nom_de_image\seg
 	- les données des images sont exportés vers un fichier dataTrain.csv et enregistés dans WebApp\PFEjee\WebContent\DOCS
-Il faut noter que cette etape ne se fait que si on a moins que 2 fichiers .csv dans WebApp\PFEjee\WebContent\DOCS 
-- segmenter l'image qu'on a recu de l'application android et enregister les images segmentées dans le dossier WebApp\PFEjee\WebContent\IMG\<nom_de_photo>\seg
+Il faut noter que cette etape ne se fait que si on moins que 2 fichiers .csv dans WebApp\PFEjee\WebContent\DOCS 
+- segmenter l'image qu'on a recu de l'application android
 - enregister les données de la photo recu dans Mongodb dans la collection de données : PhotoDataTest
 - les données de l'image sont exportés vers un fichier dataTest.csv et enregistés dans WebApp\PFEjee\WebContent\DOCS
-- Utiliser l'API Weka pour analyser les donner et predir la qualité de la photo recu à l'aide de differentes algorithmes de prediction 
+- Utiliser l'API Weka pour analyser les donner et predir si l'image est un mélanome et donner la qualité de la photo recu à l'aide de differentes algorithmes de prediction 
 et les données d'entrainement.
 
 Il faut noter que pour le moment on a fait que des traimtement d'image sur les couleurs : light brown, dark brown, white, black, red, blue gray
 
- 
+Dans l'application Web on a une partie test qui permet de tester les différents filters et traitements qu'on peut applicquer 
+sur les images avec l'API OpenCV. On peut executer cette partie sans executer toute l'application, pour cela 
+il suffit d'executer le fichier main "ImageSegmentationDemo.java".
+
