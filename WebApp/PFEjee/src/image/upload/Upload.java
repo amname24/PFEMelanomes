@@ -112,7 +112,8 @@ public class Upload extends HttpServlet {
 				//segmentation of the photo
 				PhotoData p = new ImageSegmentation().run(photo,false);
 				if(photo.getName().equals("IMD211.bmp")||photo.getName().equals("IMD219.bmp")||photo.getName().equals("IMD242.bmp")||photo.getName().equals("IMD240.bmp")||photo.getName().equals("IMD284.bmp")||photo.getName().equals("IMD285.bmp")||photo.getName().equals("IMD348.bmp")||photo.getName().equals("IMD349.bmp")||photo.getName().equals("IMD403.bmp")||photo.getName().equals("IMD404.bmp")||photo.getName().equals("IMD405.bmp")||photo.getName().equals("IMD407.bmp")||photo.getName().equals("IMD408.bmp")||photo.getName().equals("IMD409.bmp")||photo.getName().equals("IMD410.bmp"
-			    		)||photo.getName().equals("IMD413.bmp")||photo.getName().equals("IMD417.bmp")||photo.getName().equals("IMD418.bmp")||photo.getName().equals("IMD419.bmp")||photo.getName().equals("IMD411.bmp")||photo.getName().equals("IMD420.bmp")||photo.getName().equals("IMD421.bmp")||photo.getName().equals("IMD423.bmp")||photo.getName().equals("IMD424.bmp")||photo.getName().equals("IMD425.bmp")||photo.getName().equals("IMD426.bmp")||photo.getName().equals("IMD435.bmp"))
+			    		)||photo.getName().equals("IMD413.bmp")||photo.getName().equals("IMD417.bmp")||photo.getName().equals("IMD418.bmp")||photo.getName().equals("IMD419.bmp")||photo.getName().equals("IMD411.bmp")||photo.getName().equals("IMD420.bmp")||photo.getName().equals("IMD421.bmp")||photo.getName().equals("IMD423.bmp")||photo.getName().equals("IMD424.bmp")||photo.getName().equals("IMD425.bmp")
+						||photo.getName().equals("IMD426.bmp")||photo.getName().equals("IMD435.bmp")||photo.getName().equals("IMD1.jpg")||photo.getName().equals("IMD2.jpg")||photo.getName().equals("IMD3.jpg")||photo.getName().equals("IMD4.jpg")||photo.getName().equals("IMD5.jpg")||photo.getName().equals("IMD6.jpg")||photo.getName().equals("IMD7.jpg")||photo.getName().equals("IMD8.jpg"))
 			    p.setMelanome("true");
 				else p.setMelanome("false");
 				//mongoDB save the photoData 
@@ -142,16 +143,19 @@ public class Upload extends HttpServlet {
 		
 		//export data from mongodb to files 
 		ExportData.run(test);
-		
+		String message= "";
 		//classieur des images
 		try {
-			baseClassifiers.run();
+			message = baseClassifiers.run();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	    response.getWriter().append("OK");
+//		StringBuffer message = new StringBuffer();
+//		message.append("Ok");
+	    response.getWriter().write(message);  
+
+	    
 	}
 
 }

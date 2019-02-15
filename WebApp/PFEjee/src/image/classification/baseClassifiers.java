@@ -40,7 +40,7 @@ import weka.core.converters.CSVLoader;
  */
 public class baseClassifiers {
     
-    public static void run() throws IOException, Exception {
+    public static String run() throws IOException, Exception {
         
         
         String folder = "C:/Users/me/eclipse-workspace2/PFEjee/WebContent/DOCS";
@@ -54,20 +54,19 @@ public class baseClassifiers {
 // base classifier
 System.out.println("Define the base classifiers...");
         String folderOutput = folder + "/";
-        int classifierNum = 7;
+        int classifierNum = 1;
         Classifier learn[] = new Classifier[classifierNum];
         int x = 0;
-        //Tree
-        learn[x++] = new RandomForest();     
         //bayes
         learn[x++] = new NaiveBayes();     
-        
+        //Tree
+       //learn[x++] = new RandomForest();     
+        //Rules
+       // learn[x++] = new DecisionTable();       
         //lazy
-        learn[x++] = new IBk();  
-        learn[x++] = new KStar();   
-        learn[x++] = new MultilayerPerceptron();   
-        learn[x++] = new DecisionTable();   
-        learn[x++] = new BayesNet();   
+        //learn[x++] = new IBk(); 
+        //fonction
+        //learn[x++] = new MultilayerPerceptron();   
 
         
         classifierNum=x;
@@ -150,7 +149,7 @@ System.out.println("Define the base classifiers...");
         for (int i = 0; i < datatest.numInstances(); i++) {
             TruthTest[i]=(int)datatest.instance(i).value(numAttribute-1);
             System.out.println("\n" + TruthTest[i] + separator);
-            
+            double somme = 0;
             int Prediction[] = new int[classifierNum];
             for(int p =0;p<classifierNum;p++){
                 startTime = System.currentTimeMillis(); 
@@ -169,9 +168,32 @@ System.out.println("Define the base classifiers...");
                 }
 
                 System.out.println(Prediction[p] + separator + TempProb[Prediction[p]]);
-                
+                somme =  somme + TempProb[1];
+            }
+            somme = somme/classifierNum;
+            System.out.println(somme);
+            if(somme<=0.20) {
+            	return "non melanome et vert";
+            }
+            else if(somme<=0.40) {
+            	return "non melanome et jaune";
+            }
+            else if(somme<=0.50) {
+            	return "non melanome et rouge";
+            }
+            else if(somme<=0.60) {
+            	return "melanome et rouge";
+            }
+            else if(somme<=0.80) {
+            	return "melanome et jaune";
+            }
+            else {
+            	return "melanome et vert";
             }
         }
+       
+        return "";
+        
         
             
     }

@@ -21,7 +21,7 @@ public class PrepareTrain {
 		File[] files = repertoire.listFiles(bmpFileFilter);
 		List<Photo> photos = new ArrayList<Photo>();
 		for (File file : files  ) {
-		    new File("C:/Users/me/eclipse-workspace2/PFEjee/WebContent/IMGTRAIN/"+file.getName().split(".bmp")[0]).mkdir();
+		    //new File("C:/Users/me/eclipse-workspace2/PFEjee/WebContent/IMGTRAIN/"+file.getName().split(".bmp")[0]).mkdir();
 			Photo nouvelle = new Photo();
 		    ObjectId id = new ObjectId();
 		    nouvelle.setId(id.toString());

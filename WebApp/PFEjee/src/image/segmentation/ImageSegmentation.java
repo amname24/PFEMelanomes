@@ -39,28 +39,28 @@ public class ImageSegmentation {
         Core.inRange(bw, lower_blue,upper_blue, maskblue);
         if(test)
         	new File(photo.getPath().split(".jpg")[0]+"/seg").mkdir();
-        else
-        	new File(photo.getPath().split(".bmp")[0]+"/seg").mkdir();
+       // else
+        	//new File(photo.getPath().split(".bmp")[0]+"/seg").mkdir();
         if(test)
         	Imgcodecs.imwrite(photo.getPath().split(".jpg")[0]+"\\seg\\blue_"+photo.getName(),maskblue);
-        else 
-        	Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\blue_"+photo.getName(),maskblue);
+        //else 
+        	//Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\blue_"+photo.getName(),maskblue);
         Mat masklightbrown = new Mat();
         Scalar lower_lightbrown = new Scalar(10, 100, 50);
         Scalar upper_lightbrown = new Scalar(20, 200, 200);
         Core.inRange(bw, lower_lightbrown,upper_lightbrown, masklightbrown);
         if(test)
         	Imgcodecs.imwrite(photo.getPath().split(".jpg")[0]+"\\seg\\lightbrown_"+photo.getName(),masklightbrown);
-        else 
-        	Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\lightbrown_"+photo.getName(),masklightbrown);
+        //else 
+        	//Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\lightbrown_"+photo.getName(),masklightbrown);
         Mat maskdarkbrown = new Mat();
         Scalar lower_darkbrown = new Scalar(10, 200, 50);
         Scalar upper_darkbrown = new Scalar(20, 255, 200);
         Core.inRange(bw, lower_darkbrown,upper_darkbrown, maskdarkbrown);
         if(test)
         	Imgcodecs.imwrite(photo.getPath().split(".jpg")[0]+"\\seg\\darkbrown_"+photo.getName(),maskdarkbrown);
-        else
-        	Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\darkbrown_"+photo.getName(),maskdarkbrown);
+       // else
+        //	Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\darkbrown_"+photo.getName(),maskdarkbrown);
         
         Scalar lower_red = new Scalar(0, 100, 100);
         Scalar upper_red = new Scalar(10, 255, 255);
@@ -68,8 +68,8 @@ public class ImageSegmentation {
         Core.inRange(bw, lower_red,upper_red, maskred);
         if(test)
         	Imgcodecs.imwrite(photo.getPath().split(".jpg")[0]+"\\seg\\red_"+photo.getName(),maskred);
-        else
-        	Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\red_"+photo.getName(),maskred);
+        //else
+        	//Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\red_"+photo.getName(),maskred);
         
         Scalar lower_white= new Scalar(0, 0, 200);
         Scalar upper_white = new Scalar(180, 255, 255);
@@ -77,8 +77,8 @@ public class ImageSegmentation {
         Core.inRange(bw, lower_white,upper_white, maskwhite);
         if(test)
         	Imgcodecs.imwrite(photo.getPath().split(".jpg")[0]+"\\seg\\white_"+photo.getName(),maskwhite);
-        else
-        	Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\white_"+photo.getName(),maskwhite);
+        //else
+        	//Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\white_"+photo.getName(),maskwhite);
         
         Scalar lower_black= new Scalar(0, 0, 0);
         Scalar upper_black = new Scalar(180,255 , 30);
@@ -86,8 +86,8 @@ public class ImageSegmentation {
         Core.inRange(bw, lower_black,upper_black, maskblack);
         if(test)
         	Imgcodecs.imwrite(photo.getPath().split(".jpg")[0]+"\\seg\\white_"+photo.getName(),maskblack);
-        else
-        	Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\white_"+photo.getName(),maskblack);
+        //else
+        	//Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\white_"+photo.getName(),maskblack);
         
         
         Mat gray = new Mat();	
@@ -95,8 +95,8 @@ public class ImageSegmentation {
         Imgproc.threshold(gray,gray,0,255,Imgproc.THRESH_BINARY_INV);
         if(test)
         	Imgcodecs.imwrite(photo.getPath().split(".jpg")[0]+"\\seg\\gray_"+photo.getName(),gray);
-        else
-        	Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\gray_"+photo.getName(),gray); 
+       // else
+        	//Imgcodecs.imwrite(photo.getPath().split(".bmp")[0]+"\\seg\\gray_"+photo.getName(),gray); 
         
         PhotoData p = new PhotoData();
         p.setPhotoid(photo.getId());
